@@ -1,7 +1,7 @@
 <ion-view view-title="My Expenses">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="expense in expenses|filter:user.password.email" type="item-text-wrap">{{expense.label}}
+      <ion-item ng-repeat="expense in expenses|filter:{by:user.password.email}" type="item-text-wrap">{{expense.label}}
       <span class= "badge badge-balanced"> {{expense.cost}}</span>
       </ion-item>
     </ion-list>

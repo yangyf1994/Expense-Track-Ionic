@@ -1,9 +1,20 @@
 <ion-view view-title="Account">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+  	<div class="list" ng-show="showLogin">
+  		<label class="item item-input">
+  			 <span class="input-label">Email</span><input type="text" ng-model="email"/>
+  		</label>
+  		<label class="item item-input">
+  			 <span class="input-label">Password</span><input type="password" ng-model="password"/>
+  		</label>
+
+  		<button class="button button-block button-positive" ng-click="login(email,password)"> Login </button>
+  	</div>
+
+  	<div class="card" ng-hide="showLogin">
+  		<div class="item item-text-wrap"> Logged in as {{user.password.email}}</div>
+  	</div>
+		<button class="button button-stable" ng-click="logout()" ng-hide="showLogin">Log Out</button>
+
   </ion-content>
 </ion-view>
